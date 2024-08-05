@@ -1,6 +1,9 @@
 package com.example.music.model.response
 
+import kotlinx.serialization.Serializable
+
 //解析网络响应
+@Serializable
 data class NetworkResponse<T> (
     //真实数据 类型是泛型
     val data:T?=null,

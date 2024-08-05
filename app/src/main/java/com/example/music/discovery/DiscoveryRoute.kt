@@ -32,6 +32,8 @@ import androidx.compose.material3.ScaffoldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -56,9 +58,14 @@ import com.example.music.ui.theme.SpaceSmallHeight
 
 
 @Composable
-fun DiscoverRoute() {
+fun DiscoverRoute(
+    //viewmodel 定义出来
+    viewModel: DiscoveryViewModel=androidx.lifecycle.viewmodel.compose.viewModel()
+) {
+    //观察view model 的数据
+    val datum by viewModel.datum.collectAsState()
     DiscoverScreen(
-        songs = SONGS
+        songs = datum
     )
 
 }

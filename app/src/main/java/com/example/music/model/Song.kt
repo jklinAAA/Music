@@ -1,8 +1,9 @@
 package com.example.music.model
 
 import com.example.music.ui.theme.Constant
+import kotlinx.serialization.Serializable
 
-
+@Serializable
 data class Song(
     /**
      * 歌曲的唯一标识符

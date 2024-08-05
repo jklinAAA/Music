@@ -1,8 +1,11 @@
 package com.example.music.model.response
 
+import kotlinx.serialization.Serializable
+
 /**
  * 分页模型
  */
+@Serializable
 data class NetworkPageMeta(
     /**
      * 有多少条
