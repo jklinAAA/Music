@@ -13,7 +13,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.example.music.component.MyNavigationBar
+import com.example.music.design.component.MyNavigationBar
 import com.example.music.discovery.DISCOVERY_ROUTE
 import com.example.music.discovery.DiscoverRoute
 import com.example.music.shortvideo.ShortVideoRoute

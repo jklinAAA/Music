@@ -15,26 +15,26 @@ enum class TopLeveDestination(
     ) {
     //发现界面
     DISCOVERY(
-        selectedIcon = R.drawable.ic_launcher_background,   //选择的图片
-        unselectedIcon = R.drawable.wangyiyun, //未选择的图标
+        selectedIcon = R.drawable.shouye_click,   //选择的图片
+        unselectedIcon = R.drawable.shouye_pass, //未选择的图标
         titleTextId = R.string.home,
         route = DISCOVERY_ROUTE,
     ),
     SHORT_VIDEO(
-        selectedIcon = R.drawable.ic_launcher_background,
-        unselectedIcon = R.drawable.wangyiyun,
+        selectedIcon = R.drawable.shiping_click,
+        unselectedIcon = R.drawable.shiping_pass,
         titleTextId = R.string.video,
         route = SHORT_VIDEO_ROUTE,
     ),
     ME(
-        selectedIcon = R.drawable.ic_launcher_background,
-        unselectedIcon = R.drawable.wangyiyun,
+        selectedIcon = R.drawable.mine_click,
+        unselectedIcon = R.drawable.mine_pass,
         titleTextId = R.string.me,
         route = ME_ROUTE,
     ),
     FEED(
-        selectedIcon = R.drawable.ic_launcher_background,
-        unselectedIcon = R.drawable.wangyiyun,
+        selectedIcon = R.drawable.dongtai_click,
+        unselectedIcon = R.drawable.dongtai_pass,
         titleTextId = R.string.feed,
         route = FEED_ROUTE,
     )

@@ -1,4 +1,4 @@
-package com.example.music.component
+package com.example.music.design.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

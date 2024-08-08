@@ -93,4 +93,8 @@ dependencies {
     //让Retrofit支持Kotlinx Serialization
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
+
+    //图片加载框架
+    //https://github.com/coil-kt/coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }

@@ -47,6 +47,8 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.example.music.R
 import com.example.music.model.Song
+import com.example.music.model.ViewData
+import com.example.music.sheet.ItemSheet
 import com.example.music.song.component.ItemSong
 import com.example.music.ui.theme.DiscoveryPreviewParameterData.SONGS
 import com.example.music.ui.theme.DiscoveryPreviewParameterProvider
@@ -63,9 +65,9 @@ fun DiscoverRoute(
     viewModel: DiscoveryViewModel=androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
     //观察view model 的数据
-    val datum by viewModel.datum.collectAsState()
+    val datum by viewModel.topDatum.collectAsState()
     DiscoverScreen(
-        songs = datum
+        topDatum = datum
     )
 
 }
@@ -74,7 +76,7 @@ fun DiscoverRoute(
 fun DiscoverScreen(
     toggleDrawer: () -> Unit = {},
     toSearch: () -> Unit = {},
-    songs: List<Song> = listOf(),
+    topDatum: List<ViewData> = listOf(),
 ) {
     Scaffold(
         topBar = {
@@ -98,8 +100,19 @@ fun DiscoverScreen(
                 verticalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxSize()
             ) {
-                items(songs) {
-                    ItemSong(data = it)
+                topDatum.forEach{  viewData ->
+                    if (viewData.sheets!= null){
+                        items(viewData.sheets){   sheet ->
+                            ItemSheet(data = sheet)
+                        }
+                    } else if (viewData.songs != null){
+                        items(viewData.songs){   song ->
+                            ItemSong(data = song)
+                        }
+                }
+
+
+
                 }
 
             }
@@ -174,7 +187,7 @@ fun DiscoveryScreenPreview(
 ) {
     MUSICTheme {
         DiscoverScreen(
-            songs = songs,
+//            songs = songs,
         )
     }
 }
