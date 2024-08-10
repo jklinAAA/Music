@@ -11,7 +11,11 @@ data class NetworkResponse<T> (
     val status:Int =0,
     //出错的提示 出错不一定有
     val message :String?= null,
-)
+){
+    val isSucceeded :Boolean
+        get() = status == 0    //如果接口请求成功是别的值就改
+
+}
 
 
 

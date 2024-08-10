@@ -61,13 +61,15 @@ import com.example.music.ui.theme.SpaceSmallHeight
 
 @Composable
 fun DiscoverRoute(
+    toSheetDetail: (String) -> Unit,
     //viewmodel 定义出来
-    viewModel: DiscoveryViewModel=androidx.lifecycle.viewmodel.compose.viewModel()
+    viewModel: DiscoveryViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
     //观察view model 的数据
     val datum by viewModel.topDatum.collectAsState()
     DiscoverScreen(
-        topDatum = datum
+        topDatum = datum,
+        toSheetDetail = toSheetDetail,
     )
 
 }
@@ -77,6 +79,7 @@ fun DiscoverScreen(
     toggleDrawer: () -> Unit = {},
     toSearch: () -> Unit = {},
     topDatum: List<ViewData> = listOf(),
+    toSheetDetail: (String) -> Unit = {},
 ) {
     Scaffold(
         topBar = {
@@ -100,17 +103,18 @@ fun DiscoverScreen(
                 verticalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxSize()
             ) {
-                topDatum.forEach{  viewData ->
-                    if (viewData.sheets!= null){
-                        items(viewData.sheets){   sheet ->
-                            ItemSheet(data = sheet)
+                topDatum.forEach { viewData ->
+                    if (viewData.sheets != null) {
+                        items(viewData.sheets) { sheet ->
+                            ItemSheet(data = sheet,
+                                modifier = Modifier
+                                    .clickable { toSheetDetail(sheet.id) })
                         }
-                    } else if (viewData.songs != null){
-                        items(viewData.songs){   song ->
+                    } else if (viewData.songs != null) {
+                        items(viewData.songs) { song ->
                             ItemSong(data = song)
                         }
-                }
-
+                    }
 
 
                 }

@@ -42,6 +42,9 @@ android {
     }
     buildFeatures {
         compose = true
+
+
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.12"
@@ -71,6 +74,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.androidx.compose.material.iconsExtended)
+
     val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation(libs.androidx.lifecycle.runtimeCompose)
@@ -97,4 +102,7 @@ dependencies {
     //图片加载框架
     //https://github.com/coil-kt/coil
     implementation("io.coil-kt:coil-compose:2.6.0")
+
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.no.op)
 }

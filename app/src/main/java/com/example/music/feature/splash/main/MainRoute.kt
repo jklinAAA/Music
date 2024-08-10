@@ -24,17 +24,20 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun MainRoute(
-    finishPage: () -> Unit
+    finishPage: () -> Unit,
+    toSheetDetail :(String) -> Unit,
 ) {
     MainScreen(
-
+     toSheetDetail =toSheetDetail ,
     )
 }
 
 @OptIn(ExperimentalFoundationApi::class) //实验性api
 @Composable
 fun MainScreen(
-    finishPage: () -> Unit = {}
+    finishPage: () -> Unit = {},
+    toSheetDetail :(String) -> Unit={},
+
 ) {
     //当前选中界面的名称
     var currentDestination by rememberSaveable {
@@ -57,7 +60,7 @@ fun MainScreen(
                 .weight(1f)
         ) { page ->
             when (page) {
-                0 -> DiscoverRoute()
+                0 -> DiscoverRoute( toSheetDetail =toSheetDetail,)
                 1 -> ShortVideoRoute()
                 2 -> MeRoute()
                 3 -> FeedRoute()
