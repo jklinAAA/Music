@@ -5,6 +5,12 @@ plugins {
 
     //kotlin序列化
     kotlin("plugin.serialization") version "1.9.23"
+
+    //依赖注入
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+
+
 }
 
 android {
@@ -105,4 +111,15 @@ dependencies {
 
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
+
+    //region 依赖注入
+    //https://developer.android.google.cn/training/dependency-injection/hilt-android?hl=zh-cn
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    kspAndroidTest(libs.hilt.android.compiler)
+    androidTestImplementation(libs.hilt.android.testing)
+    //endregion
+
+    compileOnly(libs.ksp.gradlePlugin)
 }

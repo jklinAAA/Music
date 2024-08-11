@@ -37,7 +37,7 @@ fun ItemSong(data: Song, modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier.fillMaxWidth()
     ) {
-        MyAsyncImage(model = data.icon, modifier = Modifier.size(20.dp))
+        MyAsyncImage(model = data.icon, modifier = Modifier.size(10.dp))
 
 
 

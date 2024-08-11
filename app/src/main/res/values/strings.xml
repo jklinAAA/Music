@@ -6,7 +6,7 @@
     <string name="agree">同意</string>
     <string name="disagree">不同意并退出应用</string>
     <string name="home">首页</string>
-    <string name="video">视频</string>
+    <string name="video">发现</string>
     <string name="me">我的</string>
     <string name="feed">动态</string>
     <string name="wifi_preload">WiFi预加载</string>
@@ -311,4 +311,5 @@
     <string name="no_music_playe">未播放音乐</string>
     <string name="lock_lyric_title">桌面歌词已经锁定</string>
     <string name="lock_lyric_content">点击解锁</string>
+    <string name="v1">网易云音乐支持IPv6 网络\n</string>
 </resources>
