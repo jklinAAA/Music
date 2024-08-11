@@ -82,7 +82,8 @@ fun SplashScreen(
         )
 //版权文本
         Text(
-            text = stringResource(id = R.string.copyright, year),
+//            text = stringResource(id = R.string.copyright, year),
+            text = stringResource(id = R.string.v1),
             color = MaterialTheme.colorScheme.onPrimary,
             style = MaterialTheme.typography.bodySmall,
             modifier = Modifier

@@ -5,6 +5,12 @@ plugins {
 
     //kotlin序列化
     kotlin("plugin.serialization") version "1.9.23"
+
+    //依赖注入
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+
+
 }
 
 android {
@@ -105,4 +111,25 @@ dependencies {
 
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
+
+    //region 依赖注入
+    //https://developer.android.google.cn/training/dependency-injection/hilt-android?hl=zh-cn
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    kspAndroidTest(libs.hilt.android.compiler)
+    androidTestImplementation(libs.hilt.android.testing)
+    //endregion
+
+    compileOnly(libs.ksp.gradlePlugin)
+
+    val androidx_media3_version = "1.2.1"
+    implementation("androidx.media3:media3-exoplayer:$androidx_media3_version")
+    implementation("androidx.media3:media3-datasource:$androidx_media3_version")
+    implementation("androidx.media3:media3-ui:$androidx_media3_version")
+    implementation("androidx.media3:media3-session:$androidx_media3_version")
+    implementation("androidx.media3:media3-cast:$androidx_media3_version")
+
+    //browser?.getChildren()?.await()
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.1")
 }

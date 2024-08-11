@@ -45,6 +45,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.music.R
 import com.example.music.model.Song
 import com.example.music.model.ViewData
@@ -63,8 +64,9 @@ import com.example.music.ui.theme.SpaceSmallHeight
 fun DiscoverRoute(
     toSheetDetail: (String) -> Unit,
     //viewmodel 定义出来
-    viewModel: DiscoveryViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
-) {
+  //  viewModel: DiscoveryViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+   viewModel: DiscoveryViewModel = hiltViewModel()
+    ) {
     //观察view model 的数据
     val datum by viewModel.topDatum.collectAsState()
     DiscoverScreen(
@@ -169,7 +171,7 @@ private fun DiscoveryTopBar(toggleDrawer: () -> Unit, toSearch: () -> Unit) {
         },
         actions = {
             Icon(
-                painter = painterResource(id = R.drawable.wangyiyun),
+                painter = painterResource(id = R.drawable.mic),
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier

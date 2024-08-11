@@ -21,8 +21,8 @@ enum class TopLeveDestination(
         route = DISCOVERY_ROUTE,
     ),
     SHORT_VIDEO(
-        selectedIcon = R.drawable.shiping_click,
-        unselectedIcon = R.drawable.shiping_pass,
+        selectedIcon = R.drawable.find_click,
+        unselectedIcon = R.drawable.find_pass,
         titleTextId = R.string.video,
         route = SHORT_VIDEO_ROUTE,
     ),

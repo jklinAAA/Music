@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.navigation
 import com.example.music.feature.splash.main.mainScreen
 import com.example.music.feature.splash.main.navigateToMain
+import com.example.music.mediaplayer.musicPlayerScreen
 import com.example.music.sheetdetail.navigateToSheetDetail
 import com.example.music.sheetdetail.sheetDetailScreen
 import com.example.music.splash.SPLASH_ROUTE
@@ -25,7 +26,11 @@ fun MyApp(navController: NavHostController) {    //应用中的界面要显示�
             toSheetDetail = navController::navigateToSheetDetail,
         )
 
-        sheetDetailScreen(finishPage = navController::popBackStack,)
+        sheetDetailScreen(finishPage = navController::popBackStack,
+            toMusicPlayer = navController::popBackStack)
 
+        musicPlayerScreen(
+            finishPage = navController::popBackStack,
+        )
     }
 }

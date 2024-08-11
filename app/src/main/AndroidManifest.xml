@@ -4,6 +4,11 @@
 
     <!--网络权限-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--region 媒体播放-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <!--endregion-->
+
 
     <application
         android:name=".MyApplication"
@@ -28,6 +33,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--region 媒体服务
+              用于实现后台播放音频，视频-->
+        <service
+            android:name=".media.MediaService"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
+        <!--endregion-->
+
     </application>
 
 </manifest>
