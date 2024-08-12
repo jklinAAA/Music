@@ -132,4 +132,8 @@ dependencies {
 
     //browser?.getChildren()?.await()
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.1")
+
+    //约束布局
+    //https://developer.android.com/develop/ui/compose/layouts/constraintlayout?hl=zh-cn
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 }

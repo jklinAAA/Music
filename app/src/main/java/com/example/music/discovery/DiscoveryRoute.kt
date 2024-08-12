@@ -63,6 +63,7 @@ import com.example.music.ui.theme.SpaceSmallHeight
 @Composable
 fun DiscoverRoute(
     toSheetDetail: (String) -> Unit,
+    toggleDrawer: () -> Unit,
     //viewmodel 定义出来
   //  viewModel: DiscoveryViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
    viewModel: DiscoveryViewModel = hiltViewModel()
@@ -71,6 +72,7 @@ fun DiscoverRoute(
     val datum by viewModel.topDatum.collectAsState()
     DiscoverScreen(
         topDatum = datum,
+        toggleDrawer = toggleDrawer,
         toSheetDetail = toSheetDetail,
     )
 
@@ -82,6 +84,7 @@ fun DiscoverScreen(
     toSearch: () -> Unit = {},
     topDatum: List<ViewData> = listOf(),
     toSheetDetail: (String) -> Unit = {},
+
 ) {
     Scaffold(
         topBar = {

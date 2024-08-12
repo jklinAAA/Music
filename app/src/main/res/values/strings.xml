@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">音乐PPA</string>
+
+    <string name="player_progress_format" translatable="false">%1$s:%2$s</string>
     //版权文本
     <string name="copyright"> %1$d 年版本 </string>
     <string name="term_service_privacy">服务条款和隐私协议提示</string>
@@ -47,15 +49,9 @@
     <string name="error_loading">请求数据失败，详情请查看错误日志，%1$s</string>
     <string name="error_network_not_connect">你的网络好像不太好</string>
     <string name="whole">全部</string>
-    <string name="wait_pay">待付款</string>
     <string name="order_close">已关闭</string>
-    <string name="wait_shipped">待发货</string>
-    <string name="wait_received">待收货</string>
-    <string name="wait_comment">待评价</string>
     <string name="complete">完成</string>
-    <string name="refund_sales_service">退款/售后</string>
     <string name="loading">加载中...</string>
-
     <string name="price">￥%1$.2f</string>
     <string name="price2">%1$.2f</string>
     <string name="selected2">已选</string>
@@ -75,17 +71,8 @@
     <string name="my_collect">我的收藏</string>
     <string name="coupon">优惠券</string>
     <string name="my_order">我的订单</string>
-    <string name="all_order">全部订单</string>
     <string name="my_assets">我的资产</string>
-
-    <string name="my_wallet">我的钱包</string>
-    <string name="subsidy_venue">补贴会场</string>
-    <string name="questionnaire_survey">问卷调查</string>
     <string name="office_customer_service">官方客服</string>
-    <string name="friend_assistance">好友助力</string>
-    <string name="installment_services">分期服务</string>
-    <string name="user_complaints">用户投诉</string>
-    <string name="other_function">其他功能</string>
     <string name="mention">朋友圈</string>
     <string name="more_service">更多服务</string>
     <string name="success_delete">删除成功</string>
@@ -130,13 +117,7 @@
     <string name="hint_scan_code">将二维码放入框内即可扫描</string>
     <string name="error_not_support_qrcode_format">不支持该格式</string>
     <string name="setting">设置</string>
-    <string name="confirm_order">确认订单</string>
     <string name="product_count">X%1$d</string>
-    <string name="total">合计：</string>
-    <string name="settle_account">结算</string>
-    <string name="settle_account_count">结算(%1$d)</string>
-    <string name="product_total_price">商品总价</string>
-    <string name="no_available">无可用</string>
     <string name="total_count">共%1$d件，合计：</string>
     <string name="available_count">%1$d张可用</string>
     <string name="alipay">支付宝</string>
@@ -179,7 +160,6 @@
     <string name="videochat_desc">开始视频聊天</string>
     <string name="textfield_desc">文本输入</string>
     <string name="not_available">功能当前不可用</string>
-    <string name="not_available_subtitle">拿一杯饮料，稍后再来看看吧！</string>
     <string name="attached_image">附加图片</string>
     <string name="search">搜索</string>
     <string name="info">信息</string>
